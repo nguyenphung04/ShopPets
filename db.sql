@@ -1,0 +1,63 @@
+create database DACN;
+use DACN;
+-- select * from user;
+-- select * from cart;
+-- select * from pet;
+-- select * from category;
+insert into category
+values (1, "Mèo"),
+(2, "Chó");
+
+-- select * from user;
+-- select * from cart;
+-- select * from orders;
+-- select * from order_detail;
+-- INSERT INTO pet(id, name, age, gender, color, price, img_url, origin, health, characteristic, category_id) VALUES
+-- ('959f3bf8-0507-49cf-ac6e-51c3eabbd2d2', 'Chó Phốc sóc mini màu vàng cam mã PS2998', 2, 0, 'Vàng cam', 15100198, 'https://pethouse.com.vn/wp-content/uploads/2025/02/cho-phoc-soc-mini-mau-vang-cam-ma-PS2998-1510x2013.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Siêu xinh', 2),
+-- ('bbcbd299-b3db-4ed8-8210-39b296716475', 'Chó Phốc sóc mini màu trắng mã PS2986', 2, 0, 'Trắng', 5445199, 'https://pethouse.com.vn/wp-content/uploads/2025/02/cho-phoc-soc-mini-mau-trang-ma-PS2986.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Nhỏ gọn', 2),
+-- ('b4adf40e-6e81-420a-89c9-1d5e6a7d27dc', 'Chó Phốc sóc mini màu trắng mã PS2982', 2, 0, 'Trắng', 14416129, 'https://pethouse.com.vn/wp-content/uploads/2025/02/cho-phoc-soc-mini-mau-trang-ma-PS2982-1510x2265.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Nhỏ gọn', 2),
+-- ('e41cb846-bbde-4dd4-98f4-56e2e5aa634b', 'Chó Phốc Sóc mini đen tuyền mã PS2977', 2, 0, 'Đen tuyền', 8335942, 'https://pethouse.com.vn/wp-content/uploads/2025/02/cho-phoc-soc-mini-mau-den-tuyen-ma-PS2977-1510x1007.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dày, size mini', 2),
+-- ('83a9c789-199f-4cc6-b950-b2716983e9dc', 'Chó Phốc Sóc vàng cam mã PS2970', 2, 1, 'Vàng cam', 17012815, 'https://pethouse.com.vn/wp-content/uploads/2025/02/cho-phoc-soc-vang-cam-ma-PS2970-1510x1007.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông mượt', 2),
+-- ('708789d2-21a6-4b65-839a-bccfe0ba31aa', 'Chó Phốc Sóc màu trắng mã PS2066', 2, 0, 'Trắng', 15903251, 'https://pethouse.com.vn/wp-content/uploads/2025/01/cho-phoc-soc-mau-trang-ma-PS2066.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông mượt', 2),
+-- ('548f1991-8371-41a2-97ff-996c2be2910c', 'Chó Phóc Sóc mini màu đen vàng mã PS2065', 2, 1, 'Đen vàng', 16766280, 'https://pethouse.com.vn/wp-content/uploads/2025/01/cho-phoc-soc-mini-mau-den-vang-ma-PS2065.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dày, size nhỏ', 2),
+-- ('081cf79e-1909-49a3-9eec-b57e0f381146', 'Mèo Anh lông dài màu golden mã ALD3136', 2, 0, 'Golden', 18934638, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-golden-ma-ALD3136.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('19231b28-5623-46e1-bd35-2be7aa9510d6', 'Mèo Anh lông dài màu golden mã ALD3132', 2, 0, 'Golden', 14191766, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-golden-ma-ALD3132-1510x1007.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('0adc5e31-ae72-409a-b53f-576a5ac33cdf', 'Mèo Anh lông dài chân lùn màu silver mã ALD3130', 2, 0, 'Silver', 12481188, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-chan-lun-ma-ALD3130-1510x2265.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông mượt', 1),
+-- ('809fb84d-0b70-4beb-953a-c6196761a6ac', 'Mèo Anh lông dài màu silver mã ALD3129', 2, 1, 'Silver', 7670226, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-silver-ma-ALD3129-1510x1007.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('601822f2-38ca-4313-a26c-eb95c5f7f8ef', 'Mèo Anh lông dài màu silver mã ALD3128', 2, 0, 'Silver', 17476467, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-silver-ma-ALD3128-1510x2265.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('dce9af0e-21b4-4464-b704-3f0cee0fcdac', 'Mèo Anh lông dài màu golden mã ALD3119', 2, 1, 'Golden', 19453486, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-golden-ma-ALD3119.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('63461e73-d109-46b4-bcf3-c5e475783c17', 'Mèo Anh lông dài màu golden mã ALD3118', 2, 0, 'Golden', 12963715, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-golden-ma-ALD3118.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('88f7c9f9-2ff0-4fdb-befa-5b1e42914380', 'Mèo Anh lông dài màu xám xanh mã ALD3102', 2, 0, 'xám xanh', 12550917, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-xam-xanh-ma-ALD3102-1510x1133.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mặt tròn, lông dài', 1),
+-- ('82e17ae8-a0c3-4574-a568-b3f43984fb78', 'Mèo Anh lông dài màu xám mã ALD3101', 2, 0, 'xám', 9348512, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-xam-ma-ALD3101.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mặt tròn, lông dài', 1),
+-- ('d7a6423d-6c04-401d-abde-e3eeb406c8de', 'Mèo Anh lông dài màu silver mã ALD3097', 2, 0, 'Silver', 17612721, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-silver-ma-ALD3097.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('de327eda-d123-4437-b334-1597000105f7', 'Mèo Anh lông dài màu golden mã ALD3096', 2, 1, 'Golden', 9147994, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-golden-ma-ALD3096.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('dee409c6-650a-45a3-bd04-f8aa21cdda55', 'Mèo Anh lông dài màu golden mã ALD3094', 2, 0, 'Golden', 19090561, 'https://pethouse.com.vn/wp-content/uploads/2025/05/meo-anh-long-dai-mau-golden-ma-ALD3094-1510x1497.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('8e48340f-f5db-4f22-a63b-a0e34b9fb4b4', 'Mèo Anh Lông dài Bicolor mã ALD3085', 2, 1, 'Bicolor', 15698183, 'https://pethouse.com.vn/wp-content/uploads/2025/04/bicolor-ald-ma-ald3085-1510x1133.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài mượt', 1),
+-- ('5bf3a6b0-7cbd-43d5-9d5a-eda8b2dfc73e', 'Mèo Anh Lông dài Bicolor mã ALD3082', 2, 0, 'Bicolor', 9652512, 'https://pethouse.com.vn/wp-content/uploads/2025/04/aln-tai-cup-black-golden-aln3083-1510x1133.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('158f6569-e461-47ce-a258-e295ba96290b', 'Mèo Anh Lông dài màu Hima mã ALD3058', 2, 0, 'Hima', 17848221, 'https://pethouse.com.vn/wp-content/uploads/2025/04/ald-duc-hima.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Chân ngắn, lông dài, tai cụp', 1),
+-- ('b09bf59d-77e0-4780-b423-5358b5ef3a8c', 'Mèo Anh Lông dài Màu trắng mắt 2 màu mã ALD3055', 2, 0, 'Trắng', 18047218, 'https://pethouse.com.vn/wp-content/uploads/2025/04/meo-anh-long-dai-mau-trang-mat-2-mau-ma-ALD3055-1510x2013.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mắt 2 màu', 1),
+-- ('7a3ba777-134e-4343-b7c5-dcee5038408b', 'Mèo Anh Lông Dài Chân Lùn màu tam thể mã ALD3052', 2, 0, 'Tam thể', 13745959, 'https://pethouse.com.vn/wp-content/uploads/2025/04/meo-anh-long-dai-chan-lun-tam-the-ma-ALD3052-1-1510x2013.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dài', 1),
+-- ('c8ce5787-ba73-4c92-b625-91412cd38d79', 'Mèo Anh lông dài chân lùn tai cụp màu golden mã ALD3032', 2, 0, 'Golden', 13130188, 'https://pethouse.com.vn/wp-content/uploads/2025/03/meo-anh-long-dai-chan-lun-tai-cup-mau-golden-ma-ALD3032-1510x2013.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông ngắn', 1),
+-- ('bc821690-a0f7-4378-97f3-8fce103a8e35', 'Mèo Anh lông dài chân lùn tai cụp màu golden mã ALD3031', 2, 1, 'Golden', 15515093, 'https://pethouse.com.vn/wp-content/uploads/2025/03/meo-anh-long-dai-chan-lun-tai-cup-mau-golden-ma-ALD3031-1510x2013.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông ngắn', 1),
+-- ('b20c0f89-e21a-455f-9b71-6b4f483d6190', 'Mèo Anh lông dài chân lùn màu xám xanh mã ALD2993', 2, 1, 'Xám xanh', 9013879, 'https://pethouse.com.vn/wp-content/uploads/2025/02/meo-anh-long-dai-chan-lun-mau-xanh-xam-ma-ALD2993.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Chân lùn', 1),
+-- ('2bb93b88-1591-49b9-9ac9-bf930e5ed248', 'Mèo Anh lông dài chân lùn màu xám xanh mã ALD2992', 2, 0, 'Xám xanh', 9606980, 'https://pethouse.com.vn/wp-content/uploads/2025/02/meo-anh-long-dai-chan-lun-mau-xam-xanh-ma-ALD2992.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Chân lùn', 1),
+-- ('32b8cbf1-0f1a-4d0c-8b0a-60563528db7d', 'Mèo Anh lông dài chân lùn màu xám xanh mã ALD2976', 2, 1, 'Xám xanh', 12379837, 'https://pethouse.com.vn/wp-content/uploads/2025/02/meo-anh-long-dai-chan-lun-mau-xam-xanh-ma-ALD2976-1510x2265.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông mượt', 1),
+-- ('e0db4fa3-b776-4b37-82d8-f09dd3f526c5', 'Mèo Anh lông dài chân lùn màu xám xanh mã ALD2975', 2, 0, 'Xám xanh', 6299954, 'https://pethouse.com.vn/wp-content/uploads/2025/02/meo-anh-long-dai-chan-lun-mau-xam-xanh-ma-ALD2975-1510x2265.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông mượt', 1),
+-- ('1266a86c-73db-436b-b5b2-57c41a195e4a', 'Mèo anh lông dài mã ALD1942', 2, 1, 'Trắng', 16971296, 'https://pethouse.com.vn/wp-content/uploads/2024/11/meo-anh-long-dai-mau-trang-ma-ALD1942-1510x1953.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'hiếu động, khuôn mặt xinh xắn', 1),
+-- ('2989a7b0-7276-4c1c-81d6-c05793312dd6', 'Mèo anh lông dài mã ALD1936', 2, 0, 'Trắng và xám đen', 9793722, 'https://pethouse.com.vn/wp-content/uploads/2024/11/meo-anh-long-dai-ma-ALD1936.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'hiếu động, khuôn mặt xinh xắn', 1),
+-- ('b1ac4d78-55ce-41c8-9da3-811ca796ed99', 'Mèo Anh lông dài mắt xanh mã ALD1937', 2, 0, 'Xám đen', 8934149, 'https://pethouse.com.vn/wp-content/uploads/2024/11/meo-anh-long-dai-mat-xanh-ma-ALD1937.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mắt xanh', 1),
+-- ('b91e39a2-ddb2-4351-80e5-f7d18102b3fb', 'Mèo Anh lông dài chân lùn màu Bicolor mã ALD1798', 2, 1, 'Bicolor', 9558623, 'https://pethouse.com.vn/wp-content/uploads/2024/09/17981.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Hiền lành, chân lùn', 1),
+-- ('0bd52a23-80ec-4264-a3c3-cf388e0c1381', 'Mèo anh lông dài màu bicolor mã ALD1799', 2, 1, 'Bicolor', 10634586, 'https://pethouse.com.vn/wp-content/uploads/2024/09/ald-17991-1510x2014.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Hiền lành, mặt bầu bĩnh, chân lùn', 1),
+-- ('5b3d7d7e-d7e8-48cd-91e2-6669d9a9134f', 'Mèo ALD màu xám trắng mã ALD1802', 2, 0, 'Trắng xám', 10363836, 'https://pethouse.com.vn/wp-content/uploads/2024/09/aldochoi-1510x2013.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Hiền lành, mặt bầu bĩnh, chân lùn', 1),
+-- ('3f6d4cc8-8f19-4be7-b0ee-a097956d52cf', 'Mèo Anh lông dài màu Tabby mã ALD1768', 2, 0, 'Tabby', 19982504, 'https://pethouse.com.vn/wp-content/uploads/2024/08/1768bia-1510x1977.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'hiếu động, khuôn mặt xinh xắn', 1);
+INSERT INTO pet(id, name, age, gender, color, price, img_url, origin, health, characteristic, category_id) VALUES
+('5bd74933-39b7-4e51-bc9a-8a3f743fe61b', 'Chó Phốc sóc màu vàng cam mã PS3141', 2, 1, 'Vàng cam', 10239444, 'https://pethouse.com.vn/wp-content/uploads/2023/12/ps3141-chia.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Nhỏ gọn', 2),
+('a0f64c81-22be-4f5f-a4e4-bb94c8357c88', 'Chó Phốc sóc mini màu kem mã PS3140', 2, 1, 'Kem', 17659321, 'https://pethouse.com.vn/wp-content/uploads/2023/12/ps3140-3-scaled.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mini, chân ngắn', 2),
+('1a094cf5-062b-4974-920c-fd4f1d63620e', 'Chó Phốc sóc mini màu kem mã PS3121', 2, 0, 'Kem', 14920333, 'https://pethouse.com.vn/wp-content/uploads/2023/12/ps3121-8.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mini, chân ngắn', 2),
+('f4a33228-f0f8-471d-bb5a-23aeadbb2e26', 'Chó Phốc Sóc màu trắng mã PS3120', 3, 0, 'Trắng', 7982201, 'https://pethouse.com.vn/wp-content/uploads/2023/11/ps3120-1-scaled.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông mượt', 2),
+('cb06823c-6d69-4575-aeef-90ad3b80dd23', 'Chó Phốc Sóc Mini Vip vàng cam mã PS3115', 2, 0, 'Vàng cam', 16810566, 'https://pethouse.com.vn/wp-content/uploads/2023/11/ps3115-9.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Lông dày, size Mini', 2),
+('b0bad8ad-98bf-4db9-9e30-e43db8e07cd8', 'Chó Phốc Sóc Mini Vip màu kem mã PS3098', 2, 1, 'Kem', 14999902, 'https://pethouse.com.vn/wp-content/uploads/2023/11/ps3098-chia.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mini', 2),
+('19e44be5-bc87-4749-8353-5b404db64291', 'Chó Phốc Sóc Đỏ mặt gấu mã PS3110', 2, 0, 'Đỏ', 16492844, 'https://pethouse.com.vn/wp-content/uploads/2023/10/ps3110-1.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mặt gấu', 2),
+('d6e5f3c5-7fe1-43a9-aa40-7ba6f0e17c71', 'Chó Phốc Sóc mặt gấu màu trắng mã PS3102', 3, 1, 'Trắng', 7149400, 'https://pethouse.com.vn/wp-content/uploads/2023/10/ps3102-2.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mặt gấu', 2),
+('3a4b140d-f634-4f32-9f9e-5bf2558da86a', 'Chó Phốc Sóc Vip mặt gấu mã PS3101', 3, 0, 'Đỏ', 12399210, 'https://pethouse.com.vn/wp-content/uploads/2023/10/ps3101-2.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Gấu Vip', 2),
+('e52e2f88-38ce-402d-a9f5-d53068459c4f', 'Chó Phốc Sóc Mini Vip trắng mã PS3099', 2, 1, 'Trắng', 7812444, 'https://pethouse.com.vn/wp-content/uploads/2023/10/ps3099-2.jpg', 0, 'Nhanh nhẹn, ăn uống tốt', 'Mini Vip', 2)

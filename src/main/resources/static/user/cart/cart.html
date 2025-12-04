@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng Của Bạn | Pet Shop</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .cart-page-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .cart-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+        .cart-table th, .cart-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        .cart-table th { background-color: #f9f9f9; font-weight: bold; color: #555; }
+        .cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 5px; }
+        .qty-input { width: 50px; padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 4px; }
+        .btn-remove { color: #dc3545; cursor: pointer; background: none; border: none; font-size: 1.2em; transition: color 0.2s; }
+        .btn-remove:hover { color: #a71d2a; }
+        
+        .cart-summary-box { 
+            margin-top: 20px; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            text-align: right; 
+        }
+        .total-price { font-size: 1.5em; color: var(--primary-color); font-weight: bold; }
+        .checkout-btn { 
+            background-color: var(--primary-color); color: white; 
+            padding: 12px 30px; border: none; border-radius: 5px; 
+            font-size: 1.1em; cursor: pointer; margin-top: 15px; 
+            font-weight: bold;
+        }
+        .checkout-btn:hover { background-color: #e65c36; }
+        .empty-cart-msg { text-align: center; padding: 50px; color: #777; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <header class="main-header-layout">
+        <div class="header-left">
+            <a href="../../index.html" class="logo-area">
+                <h1>PET SHOP 🐾</h1><p>Thế giới chó mèo</p>
+            </a>
+        </div>
+        <div class="header-right-actions">
+            <a href="../../index.html" class="nav-icon"><i class="fas fa-home"></i> Tiếp tục mua sắm</a>
+        </div>
+    </header>
+
+    <main class="cart-page-container">
+        <h2 style="margin-bottom: 20px; color: #333;">Giỏ Hàng Của Bạn</h2>
+        
+        <div id="cart-content">
+            <p class="empty-cart-msg">Đang tải giỏ hàng...</p>
+        </div>
+
+        <div id="cart-summary" class="cart-summary-box" style="display: none;">
+            <p>Tổng tiền:</p>
+            <div class="total-price" id="cart-total-price">0 đ</div>
+            <button class="checkout-btn" onclick="window.location.href='../checkout/checkout.html'">Tiến Hành Thanh Toán</button>
+        </div>
+    </main>
+
+    <footer><p>&copy; 2025 Pet Shop.</p></footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>

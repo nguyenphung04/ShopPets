@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Thú Cưng 🐶</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="main-header-layout">
+        <div class="header-left">
+            <a href="index.html" class="logo-area" title="Trang chủ">
+                <h1>PET SHOP 🐾</h1>
+                <p>Thế giới chó mèo</p>
+            </a>
+        </div>
+
+        <div class="search-bar-integrated">
+            <input type="text" id="search-input" placeholder="Tìm kiếm thú cưng...">
+            <button id="search-button" title="Tìm kiếm"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="header-right-actions">
+            <div id="auth-area" style="display: flex; align-items: center; gap: 20px;">
+                <a href="regis_log/login.html" class="nav-icon" title="Đăng nhập"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="regis_log/register.html" class="nav-icon" title="Đăng ký"><i class="fas fa-user-plus"></i></a>
+            </div>
+        
+            <a href="user/cart/cart.html" class="nav-icon cart-icon" title="Giỏ hàng">
+                <i class="fas fa-shopping-cart"></i> 
+                <span id="cart-count" class="cart-badge">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="filter-controls">
+            <button id="filter-all" class="active">Tất cả</button>
+            <button id="filter-dogs">Chó</button>
+            <button id="filter-cats">Mèo</button>
+        </div>
+        
+        <section id="pet-list" class="pet-container">
+            <p>Đang tải danh sách thú cưng...</p>
+        </section>
+        
+        <div id="pagination-controls" class="pagination-controls"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pet Shop. Frontend by Vanilla JS.</p>
+    </footer>
+
+    <script src="index.js"></script> 
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Danh Mục | Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header"><h2><i class="fas fa-paw"></i> ADMIN</h2></div>
+        <div class="sidebar-menu">
+            <a href="index.html"><i class="fas fa-tachometer-alt"></i> Tổng quan</a>
+            <a href="users.html"><i class="fas fa-users"></i> Người dùng</a>
+            <a href="products.html"><i class="fas fa-box-open"></i> Sản phẩm</a>
+            <a href="categories.html" class="active"><i class="fas fa-tags"></i> Danh mục</a>
+            <a href="orders.html"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+            <a href="#" onclick="logoutAndGoHome()" style="margin-top: 50px; border-top: 1px solid #34495e;">
+                <i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="page-header"><h1>Quản Lý Danh Mục</h1></div>
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Tìm danh mục...">
+                <button class="btn-search" onclick="searchCats()"><i class="fas fa-search"></i></button>
+            </div>
+            <button class="btn-add" onclick="openModal()"><i class="fas fa-plus"></i> Thêm Danh Mục</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead><tr><th>ID</th><th>Tên Danh Mục</th><th>Tổng sản phẩm</th><th>Hành động</th></tr></thead>
+                <tbody id="cat-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="catModal" class="modal">
+        <div class="modal-content" style="width: 400px;">
+            <h2 id="modal-title">Thêm Danh Mục</h2>
+            <form id="cat-form">
+                <input type="hidden" id="cat-id">
+                <div class="form-group">
+                    <label>Tên Danh Mục</label>
+                    <input type="text" id="cat-name" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Hủy</button>
+                    <button type="submit" class="btn-save">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="categories.js"></script>
+</body>
+<script>
+    function logoutAndGoHome() {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('currentUsername');
+        localStorage.removeItem('role');
+        window.location.href = '../index.html';
+    }
+</script>
+</html>

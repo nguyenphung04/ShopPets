@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán | Pet Shop</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .checkout-container { max-width: 1100px; margin: 40px auto; display: flex; gap: 30px; padding: 0 20px; }
+        .checkout-form { flex: 2; background: white; padding: 25px; border-radius: 8px; box-shadow: var(--shadow); }
+        .checkout-summary { flex: 1; background: white; padding: 25px; border-radius: 8px; box-shadow: var(--shadow); height: fit-content; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;
+        }
+        .address-group { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .payment-options { margin-top: 20px; }
+        .payment-option { 
+            border: 1px solid #eee; padding: 15px; border-radius: 6px; margin-bottom: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;
+        }
+        .payment-option:hover { border-color: var(--primary-color); }
+        .payment-option input { width: auto; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1em; }
+        .summary-total { border-top: 2px solid #eee; padding-top: 15px; margin-top: 15px; font-size: 1.3em; font-weight: bold; color: var(--primary-color); }
+        .btn-place-order { width: 100%; padding: 15px; background: var(--primary-color); color: white; border: none; border-radius: 6px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin-top: 20px; }
+        .btn-place-order:hover { background: #e65c36; }
+    </style>
+</head>
+<body>
+    <header class="main-header-layout">
+        <div class="header-left">
+            <a href="../../index.html" class="logo-area"><h1>PET SHOP 🐾</h1><p>Thanh Toán</p></a>
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-form">
+            <h2 style="color: var(--secondary-color); margin-bottom: 20px;">Thông tin giao hàng</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label>Họ và tên người nhận</label>
+                    <input type="text" id="receiverName" required>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="text" id="receiverPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <div class="address-group">
+                        <select id="city" required><option value="">Chọn Tỉnh/Thành</option></select>
+                        <select id="district" required><option value="">Chọn Quận/Huyện</option></select>
+                        <select id="ward" required><option value="">Chọn Phường/Xã</option></select>
+                    </div>
+                    <input type="text" id="addressDetail" placeholder="Số nhà, tên đường..." style="margin-top: 10px;" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Ghi chú đơn hàng</label>
+                    <textarea id="note" rows="2"></textarea>
+                </div>
+
+                <h2 style="color: var(--secondary-color); margin-top: 30px;">Phương thức thanh toán</h2>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="COD" checked>
+                        <span><i class="fas fa-money-bill-wave"></i> Thanh toán khi nhận hàng (COD)</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="VNPAY">
+                        <span><i class="fas fa-qrcode"></i> Thanh toán qua VNPAY (Ví/Thẻ/QR)</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+
+        <div class="checkout-summary">
+            <h3 style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">Đơn hàng của bạn</h3>
+            <div id="order-items-list">
+                <p>Đang tải...</p>
+            </div>
+            
+            <div class="summary-row summary-total">
+                <span>Tổng cộng:</span>
+                <span id="checkout-total">0 đ</span>
+            </div>
+
+            <button type="submit" form="checkout-form" class="btn-place-order">ĐẶT HÀNG</button>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script> <script src="checkout.js"></script>
+</body>
+</html>

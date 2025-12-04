@@ -1,0 +1,341 @@
+:root {
+    --primary-color: #ff7f50;
+    --secondary-color: #4682b4;
+    --background-color: #f8f8f8;
+    --card-background: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: transparent; 
+    padding: 0; 
+    box-shadow: none;
+}
+
+.main-header-layout {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.logo-area {
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.logo-area:hover {
+    opacity: 0.8;
+}
+
+.logo-area h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.logo-area p {
+    margin: -5px 0 0 0;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.search-bar-integrated {
+    display: flex;
+    width: 450px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.search-bar-integrated input {
+    flex-grow: 1;
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    color: #333;
+    font-size: 1em;
+}
+
+.search-bar-integrated button {
+    background-color: #f1f1f1;
+    color: var(--secondary-color);
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-bar-integrated button:hover {
+    background-color: #ddd;
+}
+.user-dropdown-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 0;
+    transition: opacity 0.2s;
+}
+
+.user-dropdown-container:hover {
+    opacity: 0.9;
+}
+
+.user-icon-area {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.user-icon-area i {
+    font-size: 1.4em;
+    margin-right: 8px;
+    color: #ffd0b8;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.user-dropdown-container:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95em;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+    color: var(--secondary-color);
+}
+
+.dropdown-menu .username-display {
+    padding: 10px 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.header-right-actions .nav-links {
+    gap: 15px;
+    align-items: center;
+}
+.header-right-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav-icon:hover {
+    color: #ffd0b8;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+}
+
+.cart-badge {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    line-height: 1;
+}
+
+.filter-controls {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.filter-controls button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: 2px solid var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.filter-controls button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.filter-controls button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pet-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.pet-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pet-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.pet-info {
+    padding: 15px;
+}
+
+.pet-info h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1.3em;
+    min-height: 40px; 
+}
+
+.pet-price {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.pet-detail {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.detail-item {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.detail-item i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.gender-male {
+    color: #007bff;
+}
+
+.gender-female {
+    color: #dc3545;
+}
+
+.pagination-controls {
+    text-align: center;
+    margin: 20px auto 40px auto;
+}
+
+.pagination-controls button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: 1px solid var(--secondary-color);
+    background-color: white;
+    color: var(--secondary-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination-controls button:hover:not(.active) {
+    background-color: #e6f0f7;
+}
+
+.pagination-controls button.active {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.pagination-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
