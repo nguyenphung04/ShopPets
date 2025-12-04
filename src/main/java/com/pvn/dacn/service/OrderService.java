@@ -64,7 +64,6 @@ public class OrderService {
             detail.setQuantity(cartItem.getQuantity());
             detail.setPrice(cartItem.getPet().getPrice());
 
-            // Tính tổng tiền
             totalAmount += (cartItem.getPet().getPrice() * cartItem.getQuantity());
 
             orderDetails.add(detail);
@@ -83,7 +82,7 @@ public class OrderService {
     public String createVnpayPaymentUrl(Order order) {
         try {
             return vnPayService.createPaymentUrl(
-                    order.getId(), // <--- TRUYỀN ID ĐƠN HÀNG VÀO ĐÂY (Thay vì để Service tự random)
+                    order.getId(),
                     (long) order.getTotalAmount(),
                     "Thanh toan don hang " + order.getId(),
                     null

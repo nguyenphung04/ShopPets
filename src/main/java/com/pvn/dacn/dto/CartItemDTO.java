@@ -1,7 +1,7 @@
 package com.pvn.dacn.dto;
 
 public class CartItemDTO {
-    private String id; // ID của dòng trong bảng Cart
+    private String id;
     private String petId;
     private String petName;
     private String petImage;

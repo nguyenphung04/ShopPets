@@ -17,21 +17,16 @@ public class JwtTokenProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
 
-    // 1. DÙNG CHUỖI CỐ ĐỊNH (Thay vì sinh ngẫu nhiên mỗi lần chạy)
-    // Chuỗi này phải đủ dài (ít nhất 64 ký tự cho HS512)
     private final String JWT_SECRET_STRING = "DayLaChuoiBiMatSieuDaiDeBaoMatTokenCuaDuAnShopThuCung2025KhongDuocTietLoRaNgoaiNhe1234567890";
 
     // Thời gian hiệu lực: 10 ngày (864000000 ms)
     private final int jwtExpirationInMs = 864000000;
 
-    // Helper tạo Key từ chuỗi cố định
     private SecretKey getSignInKey() {
         return Keys.hmacShaKeyFor(JWT_SECRET_STRING.getBytes(java.nio.charset.StandardCharsets.UTF_8));
     }
 
-    // 2. Tạo Token
     public String generateToken(Authentication authentication) {
-        // Lấy UserDetails từ Authentication (Spring Security chuẩn)
         UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
 
         Date now = new Date();
@@ -41,14 +36,13 @@ public class JwtTokenProvider {
                 .setSubject(userPrincipal.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(expiryDate)
-                .signWith(getSignInKey(), SignatureAlgorithm.HS512) // Dùng key cố định
+                .signWith(getSignInKey(), SignatureAlgorithm.HS512)
                 .compact();
     }
 
-    // 3. Lấy Username từ Token
     public String getUsernameFromJWT(String token) {
         Claims claims = Jwts.parserBuilder()
-                .setSigningKey(getSignInKey()) // Dùng key cố định
+                .setSigningKey(getSignInKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
@@ -56,7 +50,6 @@ public class JwtTokenProvider {
         return claims.getSubject();
     }
 
-    // 4. Xác thực Token
     public boolean validateToken(String authToken) {
         try {
             Jwts.parserBuilder().setSigningKey(getSignInKey()).build().parseClaimsJws(authToken);

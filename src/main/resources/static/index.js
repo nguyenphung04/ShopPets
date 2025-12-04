@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ----------------------------------------------------
-    // *** KHAI BÁO CÁC BIẾN VÀ HẰNG SỐ ***
-    // ----------------------------------------------------
     let allPets = [];
     let filteredPets = []; 
     
@@ -18,13 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ITEMS_PER_PAGE = 9; 
     let currentPage = 1;
     const API_URL = 'http://localhost:1010/pets';
-    const API_USER_DETAILS = 'http://localhost:1010/users/details'; // API để test token
-
-    // ----------------------------------------------------
-    // *** 1. LOGIC XÁC THỰC & UI HEADER (MỚI) ***
-    // ----------------------------------------------------
-
-    // Hàm cập nhật giao diện Header (Đăng nhập vs Tài khoản)
+    const API_USER_DETAILS = 'http://localhost:1010/users/details';
     function updateHeaderUI() {
         const token = localStorage.getItem('accessToken');
         const currentUsername = localStorage.getItem('currentUsername');
@@ -33,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!headerRight) return;
 
         if (token && currentUsername) {
-            // ĐÃ ĐĂNG NHẬP: Hiển thị Menu User
             headerRight.innerHTML = `
                 <div class="user-dropdown-container">
                     <div class="user-icon-area">
@@ -58,19 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span id="cart-count" class="cart-badge">0</span>
                 </a>
             `;
-
-            // Gán sự kiện Đăng xuất
             const logoutBtn = document.getElementById('logout-btn');
             if(logoutBtn) {
                 logoutBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    localStorage.clear(); // Xóa sạch token
+                    localStorage.clear();
                     alert('Bạn đã đăng xuất.');
-                    window.location.reload(); // Tải lại trang để về giao diện khách
+                    window.location.reload();
                 });
             }
         } else {
-            // CHƯA ĐĂNG NHẬP: Hiển thị nút Login/Register
             headerRight.innerHTML = `
                 <a href="regis_log/login.html" class="nav-icon" title="Đăng nhập"><i class="fas fa-sign-in-alt"></i></a>
                 <a href="regis_log/register.html" class="nav-icon" title="Đăng ký"><i class="fas fa-user-plus"></i></a>
@@ -81,16 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
     }
-
-    // Hàm kiểm tra Token sống hay chết ngay khi vào trang
     async function verifyTokenOnLoad() {
         const token = localStorage.getItem('accessToken');
         const username = localStorage.getItem('currentUsername');
 
-        if (!token) return; // Khách vãng lai, không cần check
+        if (!token) return;
 
         try {
-            // Gọi thử API cần quyền để xem Server phản ứng thế nào
             const response = await fetch(`${API_USER_DETAILS}?username=${username}`, {
                 method: 'GET',
                 headers: { 'Authorization': `Bearer ${token}` }
@@ -101,17 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.removeItem('accessToken');
                 localStorage.removeItem('currentUsername');
                 localStorage.removeItem('role');
-                updateHeaderUI(); // Cập nhật lại về giao diện khách ngay lập tức
+                updateHeaderUI();
             }
         } catch (error) {
             console.error('Không thể kết nối Server để check token:', error);
         }
     }
-
-    // ----------------------------------------------------
-    // *** CÁC HÀM TIỆN ÍCH & RENDER SẢN PHẨM ***
-    // ----------------------------------------------------
-
     function formatCurrency(price) {
         if (typeof price !== 'number') price = parseFloat(price);
         return price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
@@ -125,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function createPetCard(pet) {
         const gender = getGenderInfo(pet.gender);
-        // Lưu ý đường dẫn detail.html
         return `
             <a href="pet-details/detail.html?id=${pet.id}" class="pet-card-link">
                 <div class="pet-card" data-id="${pet.id}">
@@ -252,15 +230,12 @@ document.addEventListener('DOMContentLoaded', () => {
         renderPage(searchResults);
     }
 
-    // Gán sự kiện
     if (filterAllButton) filterAllButton.addEventListener('click', () => handleFilter('Tất cả'));
     if (filterDogsButton) filterDogsButton.addEventListener('click', () => handleFilter('Chó'));
     if (filterCatsButton) filterCatsButton.addEventListener('click', () => handleFilter('Mèo'));
     
     if (searchButton) searchButton.addEventListener('click', handleSearch);
     if (searchInput) searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSearch(); });
-
-    // --- FETCH DATA ---
     async function fetchPets() {
         if (petListContainer) petListContainer.innerHTML = '<p style="text-align:center; width:100%;">Đang kết nối đến API Java...</p>';
 
@@ -290,8 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- KHỞI CHẠY ---
-    updateHeaderUI(); // 1. Render UI dựa trên localStorage hiện tại
-    verifyTokenOnLoad(); // 2. Kiểm tra ngầm Token với Server
-    fetchPets(); // 3. Tải sản phẩm
+    updateHeaderUI(); 
+    verifyTokenOnLoad();
+    fetchPets();
 });

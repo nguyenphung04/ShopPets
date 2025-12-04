@@ -2,8 +2,8 @@ package com.pvn.dacn.dto;
 
 public class UserUpdateDTO {
     private String password;
-    private Integer status; // Dùng Integer để check null
-    private Integer role;   // Thêm trường này
+    private Integer status;
+    private Integer role;
     private String currentPassword;
     private String username;
     private String name;

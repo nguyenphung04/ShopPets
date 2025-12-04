@@ -10,7 +10,6 @@ public class OrderRequestDTO {
     private String note;
     private String paymentMethod;
 
-    // Getter & Setter
     public String getReceiverName() { return receiverName; }
     public void setReceiverName(String receiverName) { this.receiverName = receiverName; }
     public String getReceiverPhone() { return receiverPhone; }

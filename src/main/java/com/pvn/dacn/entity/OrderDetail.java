@@ -12,7 +12,7 @@ public class OrderDetail {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Order order; // Link về Order cha
+    private Order order;
 
     @ManyToOne
     @JoinColumn(name = "pet_id")

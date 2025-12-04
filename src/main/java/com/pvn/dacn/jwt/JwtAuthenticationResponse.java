@@ -3,8 +3,8 @@ package com.pvn.dacn.jwt;
 public class JwtAuthenticationResponse {
     private String accessToken;
     private String tokenType = "Bearer";
-    private String username; // Thêm tên để tiện lưu
-    private int role;        // Thêm Role (0: Admin, 1: User)
+    private String username;
+    private int role;
 
     public JwtAuthenticationResponse(String accessToken, String username, int role) {
         this.accessToken = accessToken;
@@ -12,7 +12,6 @@ public class JwtAuthenticationResponse {
         this.role = role;
     }
 
-    // Getters & Setters
     public String getAccessToken() { return accessToken; }
     public void setAccessToken(String accessToken) { this.accessToken = accessToken; }
     public String getTokenType() { return tokenType; }
